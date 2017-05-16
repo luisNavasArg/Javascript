@@ -1,0 +1,125 @@
+<!DOCTYPE Html>
+<html>
+<head>
+    <meta charset="utf-8">
+  <title>
+    Juego de Dados
+  </title>
+  <script src="../js/javascriptDados3.js"></script>
+ <link rel="stylesheet" href="../css/estiloDados.css">
+  <script>
+</script>
+</head>
+  <body  >
+    <header>
+      <h1 id="titulo"></h1>
+</header>
+<img id="imagen" width="160" height="80" src="../imagenes/dado.gif">
+
+<br>
+<div id="tabla">
+<table  >
+
+  <tr>
+    <th>
+      1.Dado
+      <td id="dado1">
+      </td>
+
+    </th>
+  <tr>
+    <tr>
+      <th>
+        2.Dado
+        <td id="dado2">
+        </td>
+      </th>
+    <tr>
+      <tr>
+        <th>
+          3.Dado
+          <td id="dado3">
+          </td>
+        </th>
+      <tr>
+        <tr>
+          <th>
+            4.Dado
+            <td id="dado4">
+            </td>
+          </th>
+        <tr>
+          <tr>
+            <tr>
+              <th>
+                5.Dado
+                <td id="dado5">
+                </td>
+              </th>
+            <tr>
+      </table></div>
+<input id="boton1" type="submit"
+onmouseout="agregarClase('boton1','esconder');"
+value="Tirar dados"/>
+<input id="boton2" type="submit"
+onclick="GuardarValores();" value="Guardar"
+onmouseout="agregarClase('boton2','esconder');"/>
+
+<p id="texto">
+</p>
+<h2 id="texto2">
+</h2>
+<input id="boton3" type="submit"
+onclick="mostrarValores();"  value="Tirar dados"/>
+<input type="submit" onclick="limpiarValores();"
+onmouseout="agregarClase('boton1','mustra');agregarClase('boton2','mustra');"
+value="Limpiar"/>
+<div id="lista">
+  <ul>
+    <li>
+      <li>
+        <li>
+          <li>
+            <li>
+            </li>
+          </li>
+        </li>
+      </li>
+    </li>
+  </ul>
+</div>
+<div id="res">
+  <h5></h5>
+  <h5></h5>
+  <h5></h5>
+  <h5></h5>
+  <h5></h5>
+  <h5></h5>
+</div>
+
+  <div id="explica" >
+    1: se coloca el número que dé la suma de 1 obtenidos.<br>
+    2: se coloca el número que dé la suma de 2 obtenidos.<br>
+    3: se coloca el número que dé la suma de 3 obtenidos.<br>
+    4: se coloca el número que dé la suma de 4 obtenidos.<br>
+    5: se coloca el número que dé la suma de 5 obtenidos.<br>
+    6: se coloca el número que dé la suma de 6 obtenidos.<br>
+
+    Doble: 15 puntos si es servida, 10 si fue armada en los dos o tres tiros del jugador. Se forman dos grupos de dos dados iguales y uno distinto.<br>
+
+    Escalera: 25 puntos si es servida, 20 si fue armada. Se forma con una progresión de números.<br> Hay tres posibilidades: 1-2-3-4-5, 2-3-4-5-6 y 3-4-5-6-1 ("escalera al as").<br>
+
+    Full: 35 puntos si es servido o 30 puntos si es armado. Se forma con dos grupos de dados iguales, uno de tres y otro de dos dados.<br>
+
+    Póker: 45 puntos si es servido o 40 puntos si es armado. Se forma con cuatro dados iguales.<br>
+
+    Generala: 50 puntos si se logra formar cinco números iguales en dos o tres tiros.<br>
+
+    Generala Doble: 60 puntos si se logra formar dos generalas en dos tiros de tres.<br>
+
+    Generala Servida: Cuando se logra la Generala de un solo tiro, se llama generala servida y el jugador automáticamente gana el juego.
+
+</div>
+
+</body>
+</html>
