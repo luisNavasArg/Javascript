@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Juego</title>
+    <meta charset="utf-8">
+    <script src="js/javascript.js"></script>
+    <style media="screen">
+      #canvas{
+        position: absolute;
+        top:0px;
+        left: 0px;
+z-index: 0;
+        }
+        #canvas2{
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          z-index: 10;
+        }
+        #muestra{
+          position: absolute;
+          top: 600px;
+          left: 0px;
+        }
+    </style>
+  </head>
+  <body onload="comenzarJuego();">
+
+    <canvas id="canvas"  width="1024px" height="572px">  </canvas>
+      <canvas id="canvas2" width="1024px" height="572px"></canvas>
+
+<input id="muestra" onclick="crearJugador();" type="submit" value="Iniciar Juego">
+<input id="hola" onclick="abajo();" type="submit" value="abajo">
+  </body>
+
+</html>
