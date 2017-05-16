@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function show_coords(event)
+{
+  var x=event.clientX;
+  var y=event.clientY;
+  alert("X coords: " + x + ", Y coords: " + y);
+}
+</script>
+</head>
+
+<body>
+
+<div onmousedown="show_coords(event)"   style="background:blue;width:600px;height:1024px;" >este espacio es para comprobar el evento del mouse</div>
+
+</body>
+</html>
