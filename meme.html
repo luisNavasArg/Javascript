@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>
+    meme
+  </title>
+  <script>
+  var img, canvas, context;
+
+        function SubirImagen()
+        {
+            canvas = document.getElementById("canvas");
+            context = canvas.getContext("2d");
+
+            canvas.width = 700;
+            canvas.height = 500;
+
+            // Cargamos el objeto que nos permite subir imagenes
+            var imagen = document.getElementById("imagen");
+            if(imagen.files.length == 0)
+            {
+                alert('Debe ingresar una imagen');
+                return;
+            }
+
+            // Creamos la imagen
+            img = new Image();
+            img.src = URL.createObjectURL(imagen.files[0]);
+
+            img.onload = function() {
+                // Dibujamos la imagen
+                context.drawImage(img, 0, 0, canvas.width, canvas.height);
+            };
+
+            // Mostramos el canvas
+            document.getElementById("meme").style.display = 'block';
+        }
+
+        function AgregarTexto()
+        {
+            // Cargamos la caja de texto
+            var texto = document.getElementById("texto");
+
+            img.src = URL.createObjectURL(imagen.files[0]);
+            img.onload = function() {
+                // Dibujamos la imagen
+                context.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+                // Agregamos el texto
+                context.lineWidth  = 5;
+                context.font = '30pt sans-serif';
+                context.strokeStyle = 'black';
+                context.fillStyle = 'white';
+                context.textAlign = 'center';
+
+                texto = texto.value.toUpperCase();
+
+                var x = canvas.width/2;
+                var y = canvas.height - 40;
+
+                context.strokeText(texto, x, y);
+                context.fillText(texto, x, y);
+            };
+        }
+
+</script>
+</head>
+<body>
+        <div id="subida">
+    <p id="elija">SELECCIONE UNA IMAGEN A SUBIR</p>
+    <div class="form-control">
+        <input id="imagen" type="file" />
+    </div>
+    <div class="form-control">
+        <button id="subir" onclick="SubirImagen();">Renderizar</button>
+    </div>
+</div>
+<div id="meme" class="none">
+    <div class="form-control">
+        <input id="texto" type="text" onkeyup="AgregarTexto();" placeholder="Texto que desea agregar" maxlength="20" autocomplete="off" />
+    </div>
+    <canvas id="canvas"></canvas>
+    <div class="form-control">
+        <p><b>Click derecho</b> y <b>guardar imagen como</b> para descargar</p>
+    </div>
+</div>
+</body>
+</html>
