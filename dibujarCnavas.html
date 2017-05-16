@@ -1,0 +1,119 @@
+<html>
+  <head>
+  <title>EJemeplo canvas</title>
+  <script>
+  //var miLienzo; // el canvas
+  //var contexto; // el contexto
+
+  function prepareCanvas(){
+    var canvasLimites; // los margenes del canvas
+    var paint=false; // nos dice si pintar o no
+    var mend; // info de mi cuadro (width,height)
+    var miLienzo=document.getElementById('canvas');
+    var contexto= miLienzo.getContext('2d'); // obtenemos el contexto ( dibujar en 2d)
+    canvasLimites=miLienzo.getBoundingClientRect(); // obtenemos los limites del canvas
+    //miLienzo.addEventListener('mousedown',down,false);
+    //miLienzo.addEventListener('mouseup',up,false);
+    miLienzo.addEventListener('mousemove',pintarCuadro,false);
+    miLienzo.style.cursor="pointer";
+    contexto.fillStyle = 'orangeRed';
+    contexto.fillRect (0, 0, 450, 350);
+    contexto.beginPath();
+    contexto.arc(95,50,40,0,2*Math.PI);
+    contexto.stroke();
+  }
+
+  function down(e) {
+
+  var mbegin=obtenerCoordenadas(e);// info de mi cuadro (x,y)
+  //alert("X coordenadas: " + posX + ", Y coordenada: " + posY);
+  paint= true;
+  }
+
+  function up() {
+  //paint= false;
+  //alert('up');
+  }
+
+  function pintarCuadro(e) {
+  alert('pintarCuadro');
+  //  var mbegin=obtenerCoordenadas(e);// info de mi cuadro (x,y)
+  //  dibujarCuadro();
+  /*if(paint){
+  mend=obtenerBounds(e);
+  contexto.clearRect(0,0,miLienzo.width,miLienzo.height);
+  dibujarCuadro();
+}*/
+  }
+/*  var posX;
+  var posY;
+  function obtenerCoordenadas(event){
+  if (event.pageX || event.pageY) {
+  posX = event.pageX;
+  posY = event.pageY;
+  }
+  else {
+  posX = event.clientX;
+  posY = event.clientY;
+};
+  }
+
+  var width;
+  var height;
+/*  function obtenerBounds(event){
+
+
+  if (event.pageX || event.pageY) {
+  width= (event.pageX- canvasLimites.left)-mbegin.x;
+  height= (event.pageY- canvasLimites.top)-mbegin.y;
+  }
+  else {
+  width= (event.clientX - canvasLimites.left)-mbegin.x;
+  height= (event.clientY - canvasLimites.top)-mbegin.y;
+  }
+
+
+  }
+
+  function dibujarCuadro(){
+
+  contexto.fillStyle="rgba(22,87,122,0.7)";
+  contexto.fillRect(56, 78,440,550);
+  }
+  var x=0,y=0;
+  function muestramelo(event){
+     x=event.clientX;
+     y=event.clientY;
+
+  }*/
+  </script>
+  </head>
+<body style="background: #eee;" onload="prepareCanvas();">
+  <a href="jugarDados.html" id="miEnlace" >Click aqui </a>
+<script>
+//capturamos por medio de el id al elemento
+var varElem = document.getElementById("miEnlace");
+//llamo a la funcion con sus respectivos parametros(ariable de elemento,
+//el evento a usar, función a ejecutar)
+registrarEvento(varElem, "click", manejadorEventos);
+//creamos la funcion para que funcione en varios navegadores
+function registrarEvento(elemento,evento,manejador) {
+  //Usamos la estructura de control if para validar los navegadores
+//if (elemento.addEventListener) // Si es IE
+
+elemento.addEventListener(evento,manejador,false);
+//else // Otros browsers
+//elemento.attachEvent("on"+evento,manejador);
+}
+
+function manejadorEventos(){
+alert("Se ha hecho click");
+//var posx = document.
+return false;
+}
+</script>
+<canvas id="canvas" width="450px" height="350px"></canvas>
+<canvas id="miCanvas" width="450px" height="350px">Su navegador no soporta Canvas.</canvas>
+
+</body>
+</html>
